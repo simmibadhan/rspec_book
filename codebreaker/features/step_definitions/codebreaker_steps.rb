@@ -1,4 +1,4 @@
-class Output
+class Output1
   def messages
     @messages ||= []
   end
@@ -8,15 +8,14 @@ class Output
 end
 
 def output1
-  @output1 ||= Output.new
+  @output1 ||= Output1.new
 end
 
 Given (/^I am not yet playing$/) do
 end
 
-When /^I start a new game$/ do
-  @messenger = StringIO.new
-  game = Codebreaker::Game.new(@messenger)
+When /^I start a new game$/ do 
+  game = Codebreaker::Game.new(output1)
   game.start
 end
 
