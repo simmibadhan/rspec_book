@@ -7,8 +7,8 @@ class Output
   end
 end
 
-def output
-  @output ||= Output.new
+def output1
+  @output1 ||= Output.new
 end
 
 Given (/^I am not yet playing$/) do
@@ -21,5 +21,5 @@ When /^I start a new game$/ do
 end
 
 Then(/^I should see "(.*?)"$/) do |message|
-  output.messages.should include(message)
+  expect(output1.messages).to include(message)
 end
